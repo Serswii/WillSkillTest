@@ -1,0 +1,91 @@
+.header {
+    display: block;
+    background: #FCDA28;
+    &__text {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 10vw;
+        line-height: 10.5vw;
+        color: #fff;
+    }
+    &__end {
+        display: flex;
+    }
+    &__mini_text {
+        width: 50%;
+        font-size: 1.661vw;
+        padding-top: 30px;
+        line-height: 28px;
+    }
+    &__slider {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 999;
+        padding-left: 5px;
+        color: #000;
+    }
+    .title_text_bold {
+        margin-top: 110px;
+        font-size: 36px;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 7px;
+    }
+    .helps p {
+        width: 27%;
+        line-height: 21px;
+    }
+}
+.bascket {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end; 
+}
+#circle {
+    display: flex;
+    font-size: 12px;
+    color: #000;
+    width: 16px;
+    height: 16.13px;
+    background-color: #FCB500
+    ;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    top: 45px;
+    position: absolute;
+}
+.header__menu {
+    display: flex;
+    background: #000;
+    height: 80px;
+    z-index: 999;
+    position: relative;
+}
+.main {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+.menu {
+    display: flex;
+    &__item {
+        margin-right: 40px;
+    }
+}
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 105px 0 97px;
+    &__logo {
+        position: absolute;
+        display: flex;
+        top: 0;
+        right: 0;
+        max-width: 63vw;
+    }
+}

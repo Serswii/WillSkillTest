@@ -1,0 +1,162 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+//@import './header.scss';
+@import './header.scss';
+@import './banner-sales.scss';
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+}
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+.mobile_menu {
+    display: none;
+}
+.mobile_bar {
+    display: none;
+    font-size: 25px;
+    margin-right: 20px;
+}
+.mobile_menu:hover, .mobile_bar:hover, .menu:hover {
+    color: #FCB500;
+    cursor: pointer;
+}
+.text_color_title {
+    color: #FCB500;
+}
+
+.baner_sales {
+    background: #111;
+    padding-bottom: 112px;
+    .baner_sales__title {
+        padding: 112px 0 68px 0;
+        text-align: center;
+        font-size: 3.33vw;
+        font-weight: 700;
+    }
+    &__item {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 64px;
+        .small_text img {
+            margin-bottom: 78px;
+        }
+        .small_text p {
+            width: 70%;
+            text-align: center;
+        }
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .price {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 48px;
+                &__oldprice {
+                    margin-right: 25px;
+                    text-decoration: line-through;
+                    font-size: 36px;
+                    width: 128px;
+                    text-align: center;
+                }
+                &__oldprice:after, &__newprice:after {
+                    content: "\20BD";
+                }
+              }
+        }
+    }
+}
+.order {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: #FCB500;
+    border-radius: 7px;
+    border: none;
+    padding: 15px 56px;
+    margin: auto;
+}
+.free_shipp {
+    font-size: 36px;
+    text-align: center;
+}
+@media screen and (min-width: 1440px) {
+    .header__text {
+        font-size: 8vw;
+        line-height: 8.5vw;
+        color: #fff;
+    }
+    .header__mini_text {
+        font-size: 1.3vw;
+    }
+
+}
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .menu {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .menu {
+        display: none;
+    }
+    .mobile_bar {
+        display: block;
+    }
+}
