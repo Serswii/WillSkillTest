@@ -6618,13 +6618,88 @@ fieldset:disabled .btn {
   visibility: hidden !important;
 }
 
+/* Указываем box sizing */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+
+ul,
+ol {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+
+body,
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  color: #fff;
+  font-size: 18px;
+  font-family: Rubik;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+
+a:not([class]) {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: #fcb500;
+}
+
+/* Упрощаем работу с изображениями */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
 .header {
   display: block;
   background: #FCDA28;
 }
 
 .header__text {
-  font-family: "Rubik";
+  font-family: Rubik;
   font-style: normal;
   font-weight: 700;
   font-size: 10vw;
@@ -6647,7 +6722,7 @@ fieldset:disabled .btn {
   display: flex;
   flex-direction: column;
   position: relative;
-  z-index: 999;
+  z-index: 997;
   padding-left: 5px;
   color: #000;
 }
@@ -6663,6 +6738,34 @@ fieldset:disabled .btn {
 .header .helps p {
   width: 27%;
   line-height: 21px;
+}
+
+.mobile_menu {
+  display: none;
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 999;
+}
+
+.mobile_bar {
+  display: none;
+  font-size: 25px;
+  margin-right: 20px;
+}
+
+.mobile_bar:hover,
+.menu:hover,
+.menu__item:hover {
+  color: #FCB500;
+  cursor: pointer;
+}
+
+.open {
+  display: flex;
 }
 
 .bascket {
@@ -6723,94 +6826,34 @@ fieldset:disabled .btn {
   max-width: 63vw;
 }
 
-/* Указываем box sizing */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.dropdown_menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 60px 35px;
 }
 
-/* Убираем внутренние отступы */
-
-ul[class],
-ol[class] {
-  padding: 0;
-}
-
-/* Убираем внешние отступы */
-
-body,
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Выставляем основные настройки по-умолчанию для body */
-
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  color: #fff;
-  font-size: 18px;
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 400;
-}
-
-/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
-
-ul[class],
-ol[class] {
-  list-style: none;
-}
-
-/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
-
-a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
-}
-
-/* Упрощаем работу с изображениями */
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-.mobile_menu {
-  display: none;
-}
-
-.mobile_bar {
-  display: none;
-  font-size: 25px;
-  margin-right: 20px;
-}
-
-.mobile_menu:hover,
-.mobile_bar:hover,
-.menu:hover {
-  color: #FCB500;
+.close {
   cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+@font-face {
+  font-family: Rubik;
+  font-display: swap;
+  src: url("../fonts/Rubik-Bold.woff2") format("woff2"), url("../fonts/Rubik-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Rubik;
+  font-display: swap;
+  src: url("../fonts/Rubik-Light.woff2") format("woff2"), url("../fonts/Rubik-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
 }
 
 .text_color_title {
@@ -12253,6 +12296,11 @@ img {
   .mobile_bar {
     display: block;
   }
+
+  .menu__item {
+    margin: 10px 0;
+    border-bottom: 1px solid;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -12447,6 +12495,16 @@ img {
   }
 }
 
+@media screen and (max-width: 720px) {
+  .baner_sales__item {
+    flex-direction: column;
+  }
+
+  .item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
 @media (max-width: 575.98px) {
   .table-responsive-sm {
     overflow-x: auto;
@@ -12546,6 +12604,18 @@ img {
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
   .menu {
     font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 628px) and (max-width: 720px) {
+  .baner_sales .baner_sales__title {
+    font-size: 4vw;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 627px) {
+  .baner_sales .baner_sales__title {
+    font-size: 5vw;
   }
 }
 

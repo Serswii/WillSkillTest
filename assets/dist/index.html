@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.min.css?_v=20220716200559">
-    <script src="https://kit.fontawesome.com/8bbe78e623.js?_v=20220716200559" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap&_v=20220716200559" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.min.css?_v=20220717153658">
+    <script src="https://kit.fontawesome.com/8bbe78e623.js?_v=20220717153658" crossorigin="anonymous"></script> 
     <title>NOOTRIS</title>
 </head>
 <body>
         <div class="header">
         <div class="header__menu">
                     <div class="main">
-                        <div class="logo"><img class="logo__img" width="120" height="34.8" src="img/logo.svg" alt="logo"></div>
+                        <div class="logo"><a href="#"><picture><source srcset="img/logo.webp" type="image/webp"><img class="logo__img" width="120" height="34.8" src="img/logo.png" alt="logo"></picture></a></div>
                         <ul class="menu">
                             <li class="menu__item">FAQ</li>
                             <li class="menu__item">Оплата и доставка</li>
@@ -27,21 +24,26 @@
                         <div class="header__end">
                             <div class="mobile_bar"><i class="fa fa-bars" aria-hidden="true"></i></div>
                             <div class="bascket">
-                                <picture><source srcset="img/bascket.webp" type="image/webp"><img width="32" height="28" src="img/bascket.png" alt="bascket"></picture><div id="circle"><p>1</p></div></div>
+                                <a href="#"><picture><source srcset="img/bascket.webp" type="image/webp"><img width="32" height="28" src="img/bascket.png" alt="bascket"></picture><div id="circle"></a><p>1</p></div></div>
                             </div>   
                         </div>
                                      
         </div>
-        <div class="mobile_menu">
-            <ul class="dropdown_menu">
-                <li class="menu__item">FAQ</li>
-                <li class="menu__item">Оплата и доставка</li>
-                <li class="menu__item">Возврат</li>
-                <li class="menu__item">Исследования</li>
-                <li class="menu__item">Личный кабинет</li>
-                <li class="menu__item">8 8 (800) 600-09-90</li>
-            </ul>
-          </div>
+    <div class="mobile_menu">
+        <picture><source srcset="img/close.webp" type="image/webp"><img class="close" src="img/close.png" alt="close"></picture>
+        <div class="container">
+            <div class="row">
+                <ul class="dropdown_menu">
+                    <li class="menu__item"><a href="#">FAQ</a></li>
+                    <li class="menu__item"><a href="#">Оплата и доставка</a></li>
+                    <li class="menu__item"><a href="#">Возврат</a></li>
+                    <li class="menu__item"><a href="#">Исследования</a></li>
+                    <li class="menu__item"><a href="#">Личный кабинет</a></li>
+                    <li class="menu__item">8 8 (800) 600-09-90</li>
+                </ul>
+            </div>
+        </div>
+    </div>
         <div class="slider">
             <div class="container">
                 <div class="row">
@@ -89,6 +91,16 @@
         <button class="order">Оформить заказ!</button>
     </div>
 </section>
-    <script src="js/app.min.js?_v=20220716200559"></script>
+    <script src="js/app.min.js?_v=20220717153658"></script>
 </body>
+<script>
+const bar = document.querySelector(".mobile_bar");
+const close = document.querySelector(".close");
+bar.onclick = function(){
+    document.querySelector(".mobile_menu").classList.toggle("open");
+}
+close.onclick = function(){
+    document.querySelector(".mobile_menu").classList.toggle("open");
+}
+</script>
 </html>

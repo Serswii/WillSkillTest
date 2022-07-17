@@ -8,4 +8,14 @@
     @@include("views/banner-sales.html", {})
     <script src="js/app.min.js"></script>
 </body>
+<script>
+const bar = document.querySelector(".mobile_bar");
+const close = document.querySelector(".close");
+bar.onclick = function(){
+    document.querySelector(".mobile_menu").classList.toggle("open");
+}
+close.onclick = function(){
+    document.querySelector(".mobile_menu").classList.toggle("open");
+}
+</script>
 </html>

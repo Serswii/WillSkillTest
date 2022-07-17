@@ -1,78 +1,9 @@
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
-//@import './header.scss';
+@import './normilize.scss';
 @import './header.scss';
 @import './banner-sales.scss';
-/* Указываем box sizing */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@import './fonts.scss';
 
-/* Убираем внутренние отступы */
-ul[class],
-ol[class] {
-  padding: 0;
-}
-
-/* Убираем внешние отступы */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Выставляем основные настройки по-умолчанию для body */
-body {
-    min-height: 100vh;
-    scroll-behavior: smooth;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
-    color: #fff;
-    font-size: 18px;
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 400;
-}
-/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
-ul[class],
-ol[class] {
-  list-style: none;
-}
-
-/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Упрощаем работу с изображениями */
-img {
-    max-width: 100%;
-    display: block;
-}
-.mobile_menu {
-    display: none;
-}
-.mobile_bar {
-    display: none;
-    font-size: 25px;
-    margin-right: 20px;
-}
-.mobile_menu:hover, .mobile_bar:hover, .menu:hover {
-    color: #FCB500;
-    cursor: pointer;
-}
 .text_color_title {
     color: #FCB500;
 }
@@ -158,5 +89,27 @@ img {
     }
     .mobile_bar {
         display: block;
+    }
+    .menu__item {
+        margin: 10px 0;
+        border-bottom: 1px solid;
+    }
+}
+@media screen and (min-width: 628px) and (max-width: 720px) {
+    .baner_sales .baner_sales__title {
+        font-size: 4vw;
+    }
+}
+@media screen and (min-width: 360px) and (max-width: 627px) {
+    .baner_sales .baner_sales__title {
+        font-size: 5vw;
+    }
+}
+@media screen and (max-width: 720px) {
+    .baner_sales__item {
+        flex-direction: column;
+    }
+    .item:not(:last-child) {
+        margin-bottom: 40px;
     }
 }

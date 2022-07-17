@@ -2,7 +2,7 @@
     display: block;
     background: #FCDA28;
     &__text {
-        font-family: 'Rubik';
+        font-family: Rubik;
         font-style: normal;
         font-weight: 700;
         font-size: 10vw;
@@ -22,7 +22,7 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        z-index: 999;
+        z-index: 997;
         padding-left: 5px;
         color: #000;
     }
@@ -37,6 +37,28 @@
         width: 27%;
         line-height: 21px;
     }
+}
+.mobile_menu {
+    display: none;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 999;
+}
+.mobile_bar {
+    display: none;
+    font-size: 25px;
+    margin-right: 20px;
+}
+.mobile_bar:hover, .menu:hover, .menu__item:hover {
+    color: #FCB500;
+    cursor: pointer;
+}
+.open {
+    display: flex;
 }
 .bascket {
       display: flex;
@@ -88,4 +110,16 @@
         right: 0;
         max-width: 63vw;
     }
+}
+.dropdown_menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 60px 35px;
+}
+.close {
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 25px;
 }
